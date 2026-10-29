@@ -1,0 +1,7 @@
+schema_version = 2
+[project]
+name = "Example Robot"
+language = "python"
+entry = "src/main.goode.py"
+[export]
+target = "goodebot-runtime"

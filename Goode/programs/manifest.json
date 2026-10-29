@@ -1,0 +1,23 @@
+{
+  "profileID" : "E4367181-8D20-4F10-9CFE-3D8AF8EB000C",
+  "profileName" : "Example Robot",
+  "programs" : [
+    {
+      "autonSlot" : 1,
+      "entrypoint" : "practice\/main.py",
+      "id" : "practice",
+      "kind" : "practice",
+      "name" : "Example Robot Practice",
+      "slot" : 1
+    },
+    {
+      "autonSlot" : 1,
+      "entrypoint" : "competition\/main.py",
+      "id" : "competition",
+      "kind" : "competition",
+      "name" : "Example Robot Competition",
+      "slot" : 2
+    }
+  ],
+  "schemaVersion" : 1
+}

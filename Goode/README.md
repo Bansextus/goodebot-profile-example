@@ -1,0 +1,686 @@
+# Example Robot
+
+**Goodebot · Create. Import. Deploy.**
+
+Robot hardware, controls, autonomous routines, and editable Goodecode are kept together under `Goode/`. Other projects, including EZ-Template, can live alongside that folder.
+
+## Project layout
+
+- `Goode/workspace/` — complete editable Goodecode project and configuration
+- `Goode/profile.json` — profile, hardware, controls, and autonomous data
+- `Goode/programs/` — real program source and deployment-slot manifest
+- Cortex builds are regenerated from the editable project; local build caches are not committed.
+
+## Profile details
+
+| Setting | Value |
+| --- | --- |
+| Profile | Example Robot |
+| Goodebot | 5.1 |
+| Profile format | 5.01 |
+| Updated (UTC) | 2026-10-29T16:45:57Z |
+| Editable project | `Goode/workspace/` |
+| GitHub repository | goodebot-profile-example |
+| Status | Workspace ready |
+
+This summary is generated from the profile configuration. Edit your robot in Goodebot or its Goodecode project; the next sync refreshes this README. Recovery data is included at the bottom.
+
+
+## Programs
+
+- Example Robot Practice: Practice, slot 1, auton 1, drive Tank Drive, Cortex+ off
+- Example Robot Competition: Competition, slot 2, auton 1, drive Tank Drive, Cortex+ off
+
+
+## Hardware
+
+- Left drive ports: 1, 2
+- Right drive ports: 3, 4
+- IMU port: 8
+- Motor groups: 3
+- Motors: 5
+- Sensors: 1
+- Pneumatics: 1
+- **Left Drive**: ports 1, 2, brake Brake
+- **Right Drive**: ports 3 (reversed), 4 (reversed), brake Brake
+- **Intake**: ports 5, brake Coast
+- Sensor Drive IMU: IMU on smart 8
+- Pneumatic Clamp: bank A, toggle
+
+
+## Controls
+
+- Drive mode: Tank Drive
+- Deadband: 5
+- Drive curve: 1.0
+- Turn curve: 1.0
+- L1 → Intake Forward
+
+
+## Autonomous routines
+
+- Slot 1: Main
+- Slot 2: Empty
+- Slot 3: Empty
+- Slot 4: Empty
+
+
+### Main
+
+1. Custom Function · Source: status
+2. Drive Forward · 24.0 inches · 50%
+3. Motor Group Command · Intake
+4. Pneumatic On · Clamp
+
+## Migration
+
+- No migrations have been applied.
+
+<details>
+<summary>Recoverable Goodebot profile data</summary>
+
+<!-- GOODEBOT_PROFILE_JSON_BEGIN -->
+```json
+{
+  "blueprint" : {
+    "autonFolders" : [
+      {
+        "id" : "9CFE7690-EF1D-4FA3-B577-D3445D910B7E",
+        "isEnabled" : true,
+        "name" : "Main"
+      }
+    ],
+    "autonSequence" : [
+      {
+        "action" : "CUSTOM_FUNCTION",
+        "arcClockwise" : true,
+        "arcDegrees" : 90,
+        "arcRadiusInches" : 18,
+        "argument" : "",
+        "driveDistanceInches" : 24,
+        "folderID" : "9CFE7690-EF1D-4FA3-B577-D3445D910B7E",
+        "mechanismDurationMs" : 320,
+        "motorSpeed" : 90,
+        "sourceStatement" : "ctx.status('Drive 24 inches')",
+        "targetHeadingDegrees" : 0,
+        "targetName" : "Source: status",
+        "targetXInches" : 36,
+        "targetYInches" : 36,
+        "timelineSlot" : 0,
+        "turnDegrees" : 90,
+        "waitDurationMs" : 350
+      },
+      {
+        "action" : "DRIVE_FORWARD",
+        "arcClockwise" : true,
+        "arcDegrees" : 90,
+        "arcRadiusInches" : 18,
+        "argument" : "",
+        "driveDistanceInches" : 24,
+        "folderID" : "9CFE7690-EF1D-4FA3-B577-D3445D910B7E",
+        "mechanismDurationMs" : 320,
+        "motorSpeed" : 50,
+        "targetHeadingDegrees" : 0,
+        "targetName" : "",
+        "targetXInches" : 36,
+        "targetYInches" : 36,
+        "timelineSlot" : 1,
+        "turnDegrees" : 90,
+        "waitDurationMs" : 350
+      },
+      {
+        "action" : "MOTOR_GROUP_COMMAND",
+        "arcClockwise" : true,
+        "arcDegrees" : 90,
+        "arcRadiusInches" : 18,
+        "argument" : "move",
+        "commandDurationMs" : 300,
+        "driveDistanceInches" : 24,
+        "folderID" : "9CFE7690-EF1D-4FA3-B577-D3445D910B7E",
+        "mechanismDurationMs" : 320,
+        "motorSpeed" : 30,
+        "targetHeadingDegrees" : 0,
+        "targetName" : "Intake",
+        "targetXInches" : 36,
+        "targetYInches" : 36,
+        "timelineSlot" : 2,
+        "turnDegrees" : 90,
+        "waitDurationMs" : 350
+      },
+      {
+        "action" : "PNEUMATIC_ON",
+        "arcClockwise" : true,
+        "arcDegrees" : 90,
+        "arcRadiusInches" : 18,
+        "argument" : "",
+        "driveDistanceInches" : 24,
+        "folderID" : "9CFE7690-EF1D-4FA3-B577-D3445D910B7E",
+        "mechanismDurationMs" : 0,
+        "motorSpeed" : 90,
+        "targetHeadingDegrees" : 0,
+        "targetName" : "Clamp",
+        "targetXInches" : 36,
+        "targetYInches" : 36,
+        "timelineSlot" : 3,
+        "turnDegrees" : 90,
+        "waitDurationMs" : 350
+      }
+    ],
+    "autonSlots" : [
+      {
+        "isEnabled" : true,
+        "name" : "Main",
+        "number" : 1
+      },
+      {
+        "isEnabled" : false,
+        "name" : "",
+        "number" : 2
+      },
+      {
+        "isEnabled" : false,
+        "name" : "",
+        "number" : 3
+      },
+      {
+        "isEnabled" : false,
+        "name" : "",
+        "number" : 4
+      }
+    ],
+    "autonTuning" : {
+      "brakeStrength" : 0.42,
+      "driftCorrection" : 1,
+      "driveCurve" : 1.35,
+      "driveDistanceScale" : 1,
+      "driveGearRatio" : 1,
+      "driveKD" : 1.8,
+      "driveKI" : 0,
+      "driveKP" : 0.45,
+      "enableOdometry" : false,
+      "headingHoldKP" : 0.35,
+      "leftDriveBias" : 1,
+      "maxAccel" : 0.65,
+      "odomBoomerangDLead" : 0.6,
+      "odomLookaheadInches" : 7.5,
+      "rightDriveBias" : 1,
+      "robotWeightPounds" : 18,
+      "settleErrorDegrees" : 1.5,
+      "settleErrorInches" : 0.75,
+      "settleTimeMs" : 180,
+      "slewRate" : 0.62,
+      "timeoutMs" : 2500,
+      "trackWidthInches" : 12.5,
+      "turnCurve" : 1.15,
+      "turnKD" : 4.2,
+      "turnKI" : 0,
+      "turnKP" : 1.15,
+      "turnScale" : 1,
+      "wheelDiameterInches" : 3.25
+    },
+    "controllerMapping" : {
+
+    },
+    "createOutputKind" : "Goodecode",
+    "driveInverted" : false,
+    "driveLeftPorts" : [
+      1,
+      2
+    ],
+    "driveMode" : "TANK",
+    "driveRightPorts" : [
+      3,
+      4
+    ],
+    "gameProfile" : {
+      "displayName" : "Current VEX V5 Game",
+      "fieldPresetID" : "vex-v5-current",
+      "id" : "vex-v5-current"
+    },
+    "imuPort" : 8,
+    "mechanismLabels" : {
+      "eject" : "Pulse Group",
+      "intake" : "Mechanism Group A",
+      "outake" : "Mechanism Group B"
+    },
+    "modules" : {
+      "includeAutonPlanner" : false,
+      "includeImageSelector" : false,
+      "includePortDiagnostics" : false
+    },
+    "multiBrainCount" : 1,
+    "operatorButtons" : [
+
+    ],
+    "pneumaticBanks" : [
+      "A"
+    ],
+    "ports" : [
+      {
+        "deviceType" : "Motor",
+        "group" : "Drive",
+        "port" : 1,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "Motor",
+        "group" : "Drive",
+        "port" : 2,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "Motor",
+        "group" : "Drive",
+        "port" : 3,
+        "power" : 100,
+        "reversed" : true
+      },
+      {
+        "deviceType" : "Motor",
+        "group" : "Drive",
+        "port" : 4,
+        "power" : 100,
+        "reversed" : true
+      },
+      {
+        "deviceType" : "Motor",
+        "group" : "Intake",
+        "port" : 5,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Drive",
+        "port" : 6,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Drive",
+        "port" : 7,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "Sensor",
+        "group" : "Other",
+        "port" : 8,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Drive",
+        "port" : 9,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Drive",
+        "port" : 10,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 11,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 12,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 13,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 14,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 15,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 16,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 17,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 18,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 19,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 20,
+        "power" : 100,
+        "reversed" : false
+      },
+      {
+        "deviceType" : "None",
+        "group" : "Other",
+        "port" : 21,
+        "power" : 100,
+        "reversed" : false
+      }
+    ],
+    "practiceAutonTriggerEnabled" : false,
+    "programProfiles" : [
+      {
+        "autonSlot" : 1,
+        "buildNotes" : "",
+        "cortexPlusEnabled" : false,
+        "driveInverted" : false,
+        "driveMode" : "TANK",
+        "kind" : "practice",
+        "programName" : "Example Robot Practice",
+        "slot" : 1,
+        "startMatchButtons" : [
+
+        ],
+        "variantID" : "practice"
+      },
+      {
+        "autonSlot" : 1,
+        "buildNotes" : "",
+        "cortexPlusEnabled" : false,
+        "driveInverted" : false,
+        "driveMode" : "TANK",
+        "kind" : "competition",
+        "programName" : "Example Robot Competition",
+        "slot" : 2,
+        "startMatchButtons" : [
+
+        ],
+        "variantID" : "competition"
+      }
+    ],
+    "robotBuilder" : {
+      "controller" : {
+        "deadband" : 5,
+        "driveCurve" : 1,
+        "driveMode" : "TANK",
+        "partnerControllerEnabled" : false,
+        "practiceModeEnabled" : true,
+        "turnCurve" : 1
+      },
+      "deploy" : {
+        "programName" : "Goodecode",
+        "requiresSDCard" : false,
+        "slot" : 1,
+        "uploadAfterBuild" : true
+      },
+      "drivetrain" : {
+        "externalGearRatio" : 1,
+        "leftTrackingWheelPort" : 0,
+        "perpendicularTrackingWheelPort" : 0,
+        "rightTrackingWheelPort" : 0,
+        "trackWidthInches" : 12.5,
+        "trackingWheelDiameterInches" : 2.75,
+        "wheelDiameterInches" : 3.25
+      },
+      "hardwareProfile" : {
+        "calibration" : {
+
+        },
+        "devices" : [
+          {
+            "id" : "goode:Left Drive",
+            "kind" : "motorGroup",
+            "name" : "Left Drive",
+            "reversed" : false,
+            "reversedPorts" : [
+
+            ],
+            "role" : "leftDrive",
+            "smartPorts" : [
+              1,
+              2
+            ]
+          },
+          {
+            "id" : "goode:Right Drive",
+            "kind" : "motorGroup",
+            "name" : "Right Drive",
+            "reversed" : false,
+            "reversedPorts" : [
+              3,
+              4
+            ],
+            "role" : "rightDrive",
+            "smartPorts" : [
+              3,
+              4
+            ]
+          },
+          {
+            "id" : "goode:Intake",
+            "kind" : "motor",
+            "name" : "Intake",
+            "reversed" : false,
+            "reversedPorts" : [
+
+            ],
+            "role" : "intake",
+            "smartPorts" : [
+              5
+            ]
+          },
+          {
+            "adiPort" : "A",
+            "id" : "goode:Clamp",
+            "kind" : "pneumatic",
+            "name" : "Clamp",
+            "reversed" : false,
+            "role" : "",
+            "smartPorts" : [
+
+            ]
+          },
+          {
+            "id" : "goode:Drive IMU",
+            "kind" : "inertial",
+            "name" : "Drive IMU",
+            "reversed" : false,
+            "reversedPorts" : [
+
+            ],
+            "role" : "",
+            "smartPorts" : [
+              8
+            ]
+          }
+        ],
+        "drivetrain" : {
+          "externalGearRatio" : {
+            "isProvided" : true,
+            "provenance" : "imported",
+            "unit" : "ratio",
+            "updatedAtISO8601" : "2026-10-29T16:45:57Z",
+            "value" : 1
+          },
+          "kind" : "Differential \/ Tank",
+          "leftMotorIDs" : [
+            "goode:Left Drive"
+          ],
+          "rightMotorIDs" : [
+            "goode:Right Drive"
+          ],
+          "trackWidth" : {
+            "isProvided" : true,
+            "provenance" : "imported",
+            "unit" : "in",
+            "updatedAtISO8601" : "2026-10-29T16:45:57Z",
+            "value" : 12.5
+          },
+          "wheelDiameter" : {
+            "isProvided" : true,
+            "provenance" : "imported",
+            "unit" : "in",
+            "updatedAtISO8601" : "2026-10-29T16:45:57Z",
+            "value" : 3.25
+          }
+        },
+        "odometry" : {
+
+        },
+        "robot" : {
+
+        },
+        "schemaVersion" : 2
+      },
+      "importReport" : [
+
+      ],
+      "importedControllerBindings" : [
+        {
+          "forwardButton" : "L1",
+          "id" : "7D1A594F-F28C-4D6F-B7C0-4BFC4750B743",
+          "motorNames" : [
+            "Intake"
+          ],
+          "name" : "Intake",
+          "power" : 127,
+          "reverseButton" : "L2",
+          "reverseEnabled" : false
+        }
+      ],
+      "motors" : [
+        {
+          "brakeMode" : "Brake",
+          "currentLimitMilliamp" : 2500,
+          "encoderUnits" : "Degrees",
+          "gearset" : "Green 18:1 \/ 200 RPM",
+          "id" : "4BA50FBA-EAED-49FC-BA8D-BFB918C2EBD5",
+          "name" : "Left Drive",
+          "ports" : [
+            1,
+            2
+          ],
+          "role" : "leftDrive",
+          "voltageLimitMillivolt" : 12000
+        },
+        {
+          "brakeMode" : "Brake",
+          "currentLimitMilliamp" : 2500,
+          "encoderUnits" : "Degrees",
+          "gearset" : "Green 18:1 \/ 200 RPM",
+          "id" : "6F2EC897-1A23-4977-80C0-E10EB33FAB24",
+          "name" : "Right Drive",
+          "ports" : [
+            -3,
+            -4
+          ],
+          "role" : "rightDrive",
+          "voltageLimitMillivolt" : 12000
+        },
+        {
+          "brakeMode" : "Coast",
+          "currentLimitMilliamp" : 2500,
+          "encoderUnits" : "Degrees",
+          "gearset" : "Green 18:1 \/ 200 RPM",
+          "id" : "FA01B443-57BD-4640-A673-E1355345FCA4",
+          "name" : "Intake",
+          "ports" : [
+            5
+          ],
+          "role" : "intake",
+          "voltageLimitMillivolt" : 12000
+        }
+      ],
+      "pneumatics" : [
+        {
+          "bank" : "A",
+          "controllerButton" : "A",
+          "defaultExtended" : false,
+          "id" : "C3BA7251-AA34-4552-BA86-DC021ACCFFF5",
+          "name" : "Clamp",
+          "toggleMode" : true
+        }
+      ],
+      "schemaVersion" : 1,
+      "sensors" : [
+        {
+          "id" : "AD348335-0D6E-4210-A1D5-5EA174EBF125",
+          "kind" : "IMU",
+          "name" : "Drive IMU",
+          "reversed" : false,
+          "smartPort" : 8
+        }
+      ]
+    },
+    "runtime" : "Goodecode",
+    "schemaVersion" : 4,
+    "setupMode" : "Standard",
+    "sharedMotorBindings" : [
+
+    ],
+    "workspaceName" : "Example Robot"
+  },
+  "createdAt" : 814985157.028185,
+  "githubOwner" : "Bansextus",
+  "githubRepositoryName" : "goodebot-profile-example",
+  "goodebotVersion" : "5.01",
+  "iconPath" : "",
+  "id" : "E4367181-8D20-4F10-9CFE-3D8AF8EB000C",
+  "lastSyncMessage" : "Workspace changes saved locally.",
+  "measurementSystem" : "imperial",
+  "mergedMembers" : [
+
+  ],
+  "migrationLog" : [
+
+  ],
+  "modifiedAt" : 814985157.323262,
+  "name" : "Example Robot",
+  "requiresCreateImport" : false,
+  "schemaVersion" : 1,
+  "setupState" : "blankDraft",
+  "syncState" : "localOnly",
+  "themePalette" : "goodebot",
+  "workspacePath" : "Goode\/workspace"
+}
+```
+<!-- GOODEBOT_PROFILE_JSON_END -->
+
+</details>
